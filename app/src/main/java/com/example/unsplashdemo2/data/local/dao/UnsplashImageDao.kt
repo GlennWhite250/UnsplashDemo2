@@ -18,4 +18,3 @@ interface UnsplashImageDao {
     @Query("DELETE FROM unsplash_image_table")
     suspend fun deleteAllImages()
 }
-
