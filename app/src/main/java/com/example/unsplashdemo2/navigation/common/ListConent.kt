@@ -1,4 +1,4 @@
-package com.example.unsplashdemo2.screens.common
+package com.example.unsplashdemo2.navigation.common
 
 import android.content.Intent
 import android.net.Uri

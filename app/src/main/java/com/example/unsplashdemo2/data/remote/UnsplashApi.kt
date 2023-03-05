@@ -1,6 +1,7 @@
 package com.example.unsplashdemo2.data.remote
 
 import com.example.unsplashdemo2.BuildConfig
+import com.example.unsplashdemo2.model.SearchResult
 import com.example.unsplashdemo2.model.UnsplashImage
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -20,10 +21,10 @@ interface UnsplashApi {
     @Headers("Authorization: Client-ID ${BuildConfig.API_KEY}")
     @GET("/search/photos")
     suspend fun searchImages(
-        @Query("page")
-        page:Int,
+        @Query("query")
+        query:String,
         @Query("per_page")
         per_page: Int
-    ):List<UnsplashImage>
+    ): SearchResult
 
 }

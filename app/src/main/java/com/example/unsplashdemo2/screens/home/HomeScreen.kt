@@ -9,7 +9,7 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.compose.collectAsLazyPagingItems
 import coil.annotation.ExperimentalCoilApi
 import com.example.unsplashdemo2.navigation.Screen
-import com.example.unsplashdemo2.screens.common.ListContent
+import com.example.unsplashdemo2.navigation.common.ListContent
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @ExperimentalCoilApi
