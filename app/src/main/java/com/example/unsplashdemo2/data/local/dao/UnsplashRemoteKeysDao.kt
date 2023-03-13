@@ -5,15 +5,16 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.unsplashdemo2.model.UnsplashRemoteKeys
+import com.example.unsplashdemo2.util.Constant.UNSPLASH_REMOTE_KEYS_TABLE
 
 @Dao
 interface UnsplashRemoteKeysDao {
-    @Query("SELECT * FROM unsplash_remote_keys_table WHERE id = :id")
+    @Query("SELECT * FROM $UNSPLASH_REMOTE_KEYS_TABLE WHERE id = :id")
     suspend fun getRemoteKeys(id: String): UnsplashRemoteKeys
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addAllRemoteKeys(remoteKeys: List<UnsplashRemoteKeys>)
 
-    @Query("DELETE FROM unsplash_remote_keys_table")
+    @Query("DELETE FROM $UNSPLASH_REMOTE_KEYS_TABLE")
     suspend fun deleteAllRemoteKeys()
 }
