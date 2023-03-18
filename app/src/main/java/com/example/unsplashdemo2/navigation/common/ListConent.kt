@@ -153,11 +153,13 @@ fun LikeCounter(
 @ExperimentalCoilApi
 @Composable
 @Preview
-fun UnsplashImagePreview(){
-    UnsplashItem(unsplashImage = UnsplashImage(
-        id = "1",
-        urls = Urls(regular = ""),
-        likes = 100,
-        user = User(username = "Glenn White", userLinks = UserLinks(html = ""))
-    ))
+fun UnsplashImagePreview() {
+    UnsplashItem(
+        unsplashImage = UnsplashImage(
+            id = "1",
+            urls = Urls(regular = ""),
+            likes = 100,
+            user = User(username = "Glenn White", userLinks = UserLinks(html = ""))
+        )
+    )
 }

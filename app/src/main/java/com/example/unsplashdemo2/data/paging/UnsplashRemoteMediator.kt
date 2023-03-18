@@ -1,10 +1,12 @@
 package com.example.unsplashdemo2.data.paging
 
+import android.util.Log
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
+import com.example.unsplashdemo2.BuildConfig
 import com.example.unsplashdemo2.data.local.UnsplashDatabase
 import com.example.unsplashdemo2.data.remote.UnsplashApi
 import com.example.unsplashdemo2.model.UnsplashImage
@@ -48,7 +50,7 @@ class UnsplashRemoteMediator (
                 }
             }
 
-            val response = unsplashApi.getAllImages(page = currentPage, per_page = ITEMS_PER_PAGE)
+            val response = unsplashApi.getAllImages(client_id = BuildConfig.API_KEY,page = currentPage, per_page = ITEMS_PER_PAGE, order_by = "popular")
             val endOfPaginationReached = response.isEmpty()
 
             val prevPage = if (currentPage == 1) null else currentPage - 1

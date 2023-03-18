@@ -5,10 +5,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.paging.ExperimentalPagingApi
+import coil.annotation.ExperimentalCoilApi
 import com.example.unsplashdemo2.screens.home.HomeScreen
 import com.example.unsplashdemo2.screens.search.SearchScreen
 
-@OptIn(ExperimentalPagingApi::class)
+@OptIn(ExperimentalPagingApi::class, ExperimentalCoilApi::class)
 @Composable
 fun SetUpNavGraph(navController: NavHostController){
     NavHost(
